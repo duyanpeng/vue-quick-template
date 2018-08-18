@@ -1,0 +1,25 @@
+{
+  "name": "vue-quick-template",
+  "version": "0.0.1",
+  "description": "一套用来写vue开源组件的webpack配置",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"npx webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duyanpeng/vue-quick-template.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duyanpeng/vue-quick-template/issues"
+  },
+  "homepage": "https://github.com/duyanpeng/vue-quick-template#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  }
+}
