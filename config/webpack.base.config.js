@@ -1,16 +1,12 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
-    entry: './index.js',
+    entry:  './index.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../dist'),
         filename: '[name].js'
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: './index.html'
-        }),
         new VueLoaderPlugin()
     ],
     module: {
@@ -64,11 +60,5 @@ module.exports = {
         alias: {
             'vue$': 'vue/dist/vue.common.js'
         }
-    },
-    devServer: {
-        overlay: true,
-        disableHostCheck: true,
-        port: 9000
     }
 }
-
