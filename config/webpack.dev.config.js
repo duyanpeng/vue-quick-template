@@ -12,6 +12,34 @@ module.exports = WebpackMerge(WebpackBaseConfig,{
             template: './index.html'
         }),
     ],
+    module:{
+        rules:[
+            {
+                test: /\.css$/, use: [
+                    { loader: 'style-loader' },
+                    {
+                        loader: 'css-loader',
+                    },
+                    {
+                        loader:'postcss-loader'
+                    }
+                ]
+            },
+            {
+                test: /\.less$/, use: [
+                    { loader: 'style-loader' },
+                    {
+                        loader: 'css-loader',
+                    },
+                    {
+                        loader:'postcss-loader'
+                    },{
+                        loader:'less-loader'
+                    }
+                ]
+            }
+        ]
+    },
     devServer: {
         overlay: true,
         disableHostCheck: true,

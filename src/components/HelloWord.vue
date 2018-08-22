@@ -1,12 +1,10 @@
-<!--  -->
+
 <template>
 <div>
-  <div @click="clickAlert">vue文件</div>
-  <div class="flex">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-  </div>
+   <div class="color">
+      <span class="count">{{ count }}</span>
+      <button @click="increment">Increment</button>
+    </div>
   </div>
 </template>
 
@@ -14,6 +12,7 @@
 export default {
   data () {
     return {
+        count: 0
     };
   },
 
@@ -24,23 +23,13 @@ export default {
   mounted(){},
 
   methods: {
-      clickAlert(){
-          alert('hello world')
-      }
+      increment () {
+      this.count++
+    }
   }
 }
 
 </script>
-<style scoped lang="less">
-.flex{
-    display: flex;
-    
-    div{
-        flex:1;
-    background-color:pink;
-    }
-}
-.flex div {
-    
-}
+<style scoped>
+
 </style>

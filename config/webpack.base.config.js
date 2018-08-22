@@ -11,30 +11,6 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/, use: [
-                    { loader: 'style-loader' },
-                    {
-                        loader: 'css-loader',
-                    },
-                    {
-                        loader:'postcss-loader'
-                    }
-                ]
-            },
-            {
-                test: /\.less$/, use: [
-                    { loader: 'style-loader' },
-                    {
-                        loader: 'css-loader',
-                    },
-                    {
-                        loader:'postcss-loader'
-                    },{
-                        loader:'less-loader'
-                    }
-                ]
-            },
-            {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {

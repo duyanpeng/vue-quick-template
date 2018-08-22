@@ -1,18 +1,22 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const WebpackBaseConfig = require('./webpack.base.config.js');
 const WebpackMerge = require('webpack-merge')
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = WebpackMerge(WebpackBaseConfig,{
-    entry:'./src/index.js',
+    entry:  './index.js',
+    mode:'production',
     output:{
-        path: path.resolve(__dirname, '../dist'),
-        filename: '[name].js',
-        library:'[name].js',
-        libraryTarget:'umd',
+        devtoolModuleFilenameTemplate: '[absolute-resource-path]',
+    devtoolFallbackModuleFilenameTemplate: '[absolute-resource-path]?[hash]'
     },
+    plugins:[
+        new HtmlWebpackPlugin({
+            template: './index.html'
+        }),
+    ],
     module:{
         rules:[
             {
@@ -38,11 +42,15 @@ module.exports = WebpackMerge(WebpackBaseConfig,{
                         loader:'less-loader'
                     }
                 ]
-            },
+            }
         ]
     },
-    plugins:[
-        new CleanWebpackPlugin(['dist'])
-    ],
-    mode:'production',
+    devServer: {
+        overlay: true,
+        disableHostCheck: true,
+        port: 9000
+    },
+    devtool: 'inline-cheap-module-source-map',
+    // target: 'node',
+    // externals: [nodeExternals()]
 })
