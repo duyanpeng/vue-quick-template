@@ -5,6 +5,7 @@ const WebpackBaseConfig = require('./webpack.base.config.js');
 const WebpackMerge = require('webpack-merge')
 
 module.exports = WebpackMerge(WebpackBaseConfig,{
+    entry:  './index.js',
     mode:'development',
     plugins:[
         new HtmlWebpackPlugin({
