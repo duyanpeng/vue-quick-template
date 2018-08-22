@@ -2,7 +2,8 @@
   "name": "vue-quick-template",
   "version": "0.0.1",
   "description": "一套用来写vue开源组件的webpack配置",
-  "main": "index.js",
+  "main": "dist/main.js",
+  "module": "src/index.js",
   "scripts": {
     "test:mocha": "mocha-webpack --webpack-config config/webpack.test.config.js --require test/setup.js test/**/*.spec.js",
     "test": "cross-env BABEL_ENV=test karma start --single-run",
